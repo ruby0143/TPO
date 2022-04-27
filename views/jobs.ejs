@@ -1,0 +1,40 @@
+<%-include("partials/nav");-%>
+    <link rel="stylesheet" href="/public/jobs.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>TPO</title>
+  </head>
+  <body>
+    <div class="form-body">
+      <div class="head">
+        <h2>TPO</h2>
+      </div>
+        <hr class="hr-head">
+        <div id="form">
+            <form action="/jobs" method="post">
+                <label for="name">Name: </label>
+                <input type="text" name="name" required>
+                <label for="rno">Roll Number: </label>
+                <input type="text" name="rno" required>
+                <label for="email">Email(College): </label>
+                <input type="email" name="email" id="mail" required>
+                <button type="submit" onclick="check()" id="submit" name="key" value="true">Proceed</button>
+            </form>
+        </div>
+    </div>
+  </body>
+  <%-include("partials/footer");-%>
+  <script>
+    function check(){
+      const mail = document.getElementById('mail').value;
+      console.log(mail);
+      if(mail.includes("@cmritonline.ac.in")===false){
+        document.getElementById('submit').value = false;
+        alert("Please enter your college mail id");
+      }
+    }
+  </script>
+  </html>
+
+  
+
+        
